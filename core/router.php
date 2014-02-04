@@ -18,7 +18,7 @@ class Router {
   /**
    * @var array
    */
-  public $args = array();
+  public $args = '';
 
   public function __construct()
   {
@@ -52,7 +52,7 @@ class Router {
       if ('/'.$key == $url['path']) {
         $this->controller = $value['controller'];
         $this->method     = $value['method'];
-        $this->args       = $url['query'];
+        $this->processArgs($url);
       }
     }
   }
@@ -95,6 +95,9 @@ class Router {
     }
   }
 
-  private function processArgs() {
+  private function processArgs($url) {
+    if (array_key_exists('query', $url)) {
+      $this->args = $url['query'];
+    }
   }
 }

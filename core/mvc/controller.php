@@ -21,6 +21,9 @@ abstract class Controller {
    */
   public function processParams($params)
   {
+    if ($params === '') {
+      return;
+    }
     $url_parts = explode("&", $params);
     foreach ($url_parts as $url_part) {
       $raw_param = explode("=", $url_part);
