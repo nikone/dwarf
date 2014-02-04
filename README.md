@@ -3,6 +3,8 @@ dwarf
 
 Minimalistic PHP framework with MVC architecture, routing and ORM
 
+![alt text](https://raw.github.com/nikone/dwarf/master/core/Mountain_king.jpg "Mountain King")
+
 ### Install
 1. Clone the project
 2. Edit application/config/database.php
